@@ -136,6 +136,38 @@
     html[dir="ltr"] .payment{direction:ltr}
     @media(max-width:520px){.nav-actions{gap:7px}.lang-option{padding:7px 9px}.cart-btn{padding:10px 12px}}
 
+
+    /* Bold rose-plum luxury background refresh */
+    :root{--bg:#f5edf2;--ink:#2e1b2b;--muted:#786675;--gold:#d6a7bf;--dark:#35172f;--card:#fffafd;--line:#ead7e4}
+    body{background:radial-gradient(ellipse at 8% 8%,rgba(225,151,190,.34),transparent 34%),radial-gradient(ellipse at 92% 38%,rgba(157,91,143,.20),transparent 32%),linear-gradient(145deg,#fbf2f7 0%,#f1e3ef 48%,#f8edf0 100%);color:var(--ink)}
+    .topbar{background:linear-gradient(100deg,#281124,#632b54 48%,#35172f);color:#fff0f8}
+    header{background:rgba(255,248,253,.93);border-bottom:1px solid #e5c4da;box-shadow:0 8px 28px rgba(65,24,56,.09)}
+    .logo{color:#35172f}.logo small{color:#a54d83}
+    .language-switch{background:#fff7fc;border-color:#e5c4da}
+    .lang-option{color:#714064}.lang-option.active{background:#632b54;color:#fff8fd}
+    .cart-btn{background:linear-gradient(135deg,#632b54,#35172f);box-shadow:0 8px 20px rgba(99,43,84,.24)}
+    .cart-btn span{background:#f1c4dc;color:#4a1c3d}
+    .hero{background-image:linear-gradient(100deg,rgba(38,13,34,.92),rgba(91,31,75,.76) 53%,rgba(47,19,42,.48)),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1800&q=85');border-bottom:4px solid #d6a7bf}
+    .hero:after{background:radial-gradient(circle at 12% 20%,rgba(242,183,217,.2),transparent 35%)}
+    .eyebrow{color:#f4cbe2;border-color:rgba(244,203,226,.7)}
+    .hero .primary{background:linear-gradient(135deg,#f2c7df,#d58db9);color:#35172f}
+    .section-head h2{color:#48203f}.section-head p{color:#80677b}
+    .product{background:rgba(255,250,253,.96);border-color:#ead3e2;box-shadow:0 12px 32px rgba(73,29,64,.08)}
+    .product:hover{border-color:#c77eac;box-shadow:0 22px 42px rgba(73,29,64,.16)}
+    .product img{background:#f0dfe9}
+    .tag{background:#f6e4ef;color:#934b7b}
+    .product h3,.price{color:#48203f}
+    .add{border-color:#8c4777;color:#632b54;background:#fffafd}
+    .add:hover{background:#632b54;border-color:#632b54;color:#fff}
+    .notice{background:linear-gradient(110deg,#f8e5f0,#f1e5f2);border-color:#e8cce0;color:#6f4b68}
+    footer{background:linear-gradient(110deg,#281124,#632b54);color:#f6e6f1;border-top:3px solid #d6a7bf}
+    .modal{background:#fffafd;border-color:#ead3e2}
+    .modal-head h2,.total{color:#48203f}
+    .close{background:#f7e8f1;color:#632b54}
+    .field input,.field textarea,.field select{background:#fffafd;border-color:#e6cfe0}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:2px solid rgba(199,126,172,.4);border-color:#c77eac}
+    .submit{background:linear-gradient(135deg,#8c3c72,#572347);box-shadow:0 8px 20px rgba(87,35,71,.2)}
+
   </style>
 </head>
 <body>
@@ -185,7 +217,7 @@
     {id:12,name:"عطر سيج إند ساندل",nameEn:"Sage & Sandal",tag:"HERBAL • WOODY",price:890,size:"100 مل",sizeEn:"100 ml",desc:"أعشاب عطرية وخشب الصندل برائحة متوازنة وراقية.",descEn:"A balanced blend of aromatic herbs and creamy sandalwood.",image:"https://images.unsplash.com/photo-1615634260167-c8cd34a2ecb4?auto=format&fit=crop&w=700&q=85&sat=-15"}
   ];
   const cart = {};
-  const money = n => new Intl.NumberFormat("ar-EG").format(n) + " ج.م";
+  const money = n => new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(n) + " EGP";
   function renderProducts(){
     const en = document.documentElement.lang === "en";
     document.getElementById("productGrid").innerHTML=products.map(p=>`
