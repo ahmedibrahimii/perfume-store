@@ -187,6 +187,46 @@
     @media(max-width:700px){.perfume-scene{left:-65px;top:58%;transform:translateY(-50%) scale(.76);opacity:.62}.hero{background-position:58% center}.hero-inner{z-index:3}.hero h1,.hero p,.hero .eyebrow,.hero .primary{position:relative;z-index:4}}
     @media(prefers-reduced-motion:reduce){.perfume-bottle,.bottle-shine,.spray-cloud:before,.spray-dot{animation:none!important}}
 
+
+
+    /* NOIR deep-ocean luxury theme: animated water caustics and midnight navy */
+    :root{--bg:#061323;--ink:#eaf4ff;--muted:#a5b9cf;--gold:#9eddf5;--dark:#07101e;--card:#0d2035;--line:#25435d}
+    html{background:#061323;scroll-behavior:smooth}
+    body{position:relative;isolation:isolate;overflow-x:hidden;color:#eaf4ff;background:linear-gradient(145deg,#030914 0%,#071a30 38%,#0a2b49 72%,#071323 100%);background-attachment:fixed}
+    body:before,body:after{content:"";position:fixed;inset:-35%;pointer-events:none;z-index:-1;will-change:transform,opacity}
+    body:before{opacity:.52;background:radial-gradient(ellipse at 20% 30%,rgba(40,164,221,.22),transparent 28%),radial-gradient(ellipse at 72% 55%,rgba(35,103,174,.3),transparent 31%),radial-gradient(ellipse at 50% 90%,rgba(77,208,226,.13),transparent 27%);filter:blur(28px);animation:oceanDrift 24s ease-in-out infinite alternate}
+    body:after{opacity:.2;background:repeating-radial-gradient(ellipse at 50% 50%,transparent 0 44px,rgba(111,222,255,.16) 47px,transparent 53px,transparent 92px);filter:blur(12px);transform:rotate(-14deg) scale(1.2);animation:waterRings 32s linear infinite}
+    @keyframes oceanDrift{0%{transform:translate3d(-3%,1%,0) rotate(-4deg) scale(1)}50%{transform:translate3d(2%,-2%,0) rotate(4deg) scale(1.08)}100%{transform:translate3d(4%,3%,0) rotate(-2deg) scale(1.02)}}
+    @keyframes waterRings{0%{transform:rotate(-14deg) translateX(-2%) scale(1.2)}50%{transform:rotate(5deg) translateX(2%) scale(1.32)}100%{transform:rotate(16deg) translateX(-2%) scale(1.2)}}
+    .topbar{background:linear-gradient(90deg,#030914,#0c3453,#030914);color:#d9f5ff;border-bottom:1px solid #4bbce455;letter-spacing:1.2px}
+    header{background:rgba(4,15,29,.84);border-bottom:1px solid rgba(111,211,247,.2);box-shadow:0 12px 35px #0005;backdrop-filter:blur(22px)}
+    .logo{color:#f1fbff;text-shadow:0 0 22px #4dcaf444}.logo small{color:#83dafa}
+    .language-switch{border-color:#2d5a79;background:#07192a}.lang-option{color:#b7d1e6}.lang-option.active{background:#123b58;color:#fff;border-color:#69d8ff}
+    .cart-btn{background:linear-gradient(135deg,#123b58,#087c9d);color:white;border:1px solid #7adfff44;box-shadow:0 8px 28px #00a5d42b}
+    .cart-btn span{background:#b4edff;color:#05223b}
+    .hero{background-color:#04101e;background-image:linear-gradient(100deg,rgba(2,9,19,.94) 0%,rgba(5,28,49,.78) 53%,rgba(4,19,36,.36) 100%),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1800&q=90');border-bottom:1px solid #66dfff55;box-shadow:0 18px 55px #0004}
+    .hero:before{background:radial-gradient(ellipse at 78% 34%,rgba(54,195,239,.2),transparent 34%),linear-gradient(0deg,rgba(2,10,22,.45),transparent 60%)}
+    .hero:after{background:radial-gradient(ellipse at 12% 15%,#6edcff20,transparent 36%)}
+    .hero h1{color:#f1faff;text-shadow:0 0 35px #58cfff28}.hero p{color:#d0e5f5}.eyebrow{color:#a5eaff;border-color:#7ddfff77;background:#06243a88}
+    .hero .primary{background:linear-gradient(120deg,#b7f0ff,#58bde6 55%,#b7f0ff);color:#05223a;box-shadow:0 8px 30px #2cc7ff30}
+    .perfume-bottle{border-color:#b5edff;background:linear-gradient(100deg,#b4edff35,#41b9e77a 35%,#d8f7ff55 58%,#155d8bba);box-shadow:inset 10px 0 18px #fff5,inset -12px 0 18px #00172b88,0 0 42px #4fcaff55}
+    .perfume-bottle:before{border-color:#a9e8ff;background:linear-gradient(90deg,#163b5b,#b8efff,#16436b)}
+    .perfume-bottle:after{color:#eafaff;border-color:#d4f5ff88;text-shadow:0 2px 10px #00182b}
+    .spray-dot{background:#c9f5ff;box-shadow:0 0 14px 4px #5ddfff99}.spray-cloud:before{background:radial-gradient(ellipse at 0% 50%,#d9faffbb 0,#70d8ff88 20%,#4fcaff33 48%,transparent 74%)}
+    main{position:relative;z-index:0}
+    .section-head h2{color:#eaf8ff}.section-head p{color:#a5bfd3}
+    .product{background:linear-gradient(155deg,rgba(17,43,67,.97),rgba(7,24,42,.96));border-color:#2c526e;box-shadow:0 14px 38px #0003;backdrop-filter:blur(12px)}
+    .product:hover{border-color:#68d8ff;box-shadow:0 22px 45px #00a8d52b}
+    .product img{background:#0a1c30;filter:saturate(.9);border-bottom:1px solid #315670}
+    .product h3{color:#effaff}.desc{color:#b2c8d9}.tag{color:#bdefff;background:#123c56;border:1px solid #2c6b8a}
+    .price{color:#b7edff}.add{border-color:#64d8ff;color:#c6f3ff;background:#08233a}.add:hover{background:#1b799d;color:white;border-color:#a9efff}
+    .notice{background:linear-gradient(120deg,#0c2a42,#0b2036);border:1px solid #2e617d;color:#c4e2f3}
+    footer{background:linear-gradient(110deg,#020914,#0b2b46,#04101f);color:#b8d7e9;border-top:1px solid #4ecfff55}
+    .modal{background:#091a2c;color:#e8f6ff;border-color:#2d5876}.modal-head h2,.total{color:#e8f6ff}.close{background:#12344d;color:#d7f5ff}.cart-item{border-color:#23445e}.cart-item small,.small-note{color:#9db8cc}.qty button{background:#102a40;color:#e7f7ff;border-color:#315b75}.remove{color:#ff9dba}
+    .field label{color:#d8ecfa}.field input,.field textarea,.field select{background:#061728;color:#eaf6ff;border-color:#2d506b}.field input::placeholder,.field textarea::placeholder{color:#8ba6bc}.field input:focus,.field textarea:focus,.field select:focus{outline:2px solid #62d8ff66;border-color:#6adfff}
+    .payment label{color:#d5e9f7}.submit{background:linear-gradient(135deg,#168bb2,#075578);color:white;box-shadow:0 8px 25px #00a8d52b}.empty{color:#9db8cc}
+    @media(prefers-reduced-motion:reduce){body:before,body:after{animation:none!important}}
+
   </style>
 </head>
 <body>
