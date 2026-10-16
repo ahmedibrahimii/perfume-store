@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="pageRoot">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,34 +74,96 @@
     @media(max-width:900px){.product img{height:235px}}
     @media(max-width:520px){.hero{min-height:350px}.hero-inner{padding-top:52px;padding-bottom:52px}.products{gap:12px}.product{border-radius:12px}.product img{height:185px}.product-info{padding:13px}.section-head h2{font-size:25px}.add{padding:10px 12px}}
 
+
+    /* Editorial luxury refresh: ivory, rose, espresso, and champagne */
+    :root{--bg:#f8f4ef;--ink:#30221f;--muted:#82736d;--gold:#b99762;--dark:#2a1d1b;--card:#fffdfa;--line:#eadfd7}
+    body{background:#f8f4ef;color:var(--ink);background-image:radial-gradient(ellipse at 8% 22%,rgba(222,190,180,.22),transparent 34%),radial-gradient(ellipse at 92% 62%,rgba(201,178,139,.16),transparent 33%)}
+    .topbar{background:#2a1d1b;color:#f6e9d6;letter-spacing:1px;font-size:11px;padding:11px}
+    header{background:rgba(255,252,247,.94);border-bottom:1px solid #e9ddd3;box-shadow:0 8px 30px rgba(67,39,31,.05);backdrop-filter:blur(16px)}
+    .logo{color:#35221f;font-family:Georgia,serif;font-size:29px;letter-spacing:7px}
+    .logo small{color:#a47c4c;letter-spacing:4px;font-size:8px}
+    .cart-btn{background:#35221f;color:#fffaf3;border-radius:999px;padding:12px 20px;box-shadow:0 7px 18px #35221f20}
+    .cart-btn span{background:#d9c09a;color:#35221f}
+    .hero{min-height:500px;position:relative;isolation:isolate;overflow:hidden;background-image:linear-gradient(90deg,rgba(35,22,20,.88) 0%,rgba(50,30,27,.62) 48%,rgba(50,30,27,.18) 100%),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1800&q=90');background-size:cover;background-position:center 48%;border-bottom:1px solid #d6c1a1}
+    .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 76% 35%,rgba(226,194,145,.24),transparent 32%),linear-gradient(0deg,rgba(31,19,17,.3),transparent 50%)}
+    .hero-inner{padding:88px 28px 92px}
+    .eyebrow{display:inline-block;color:#e6cda6;border:1px solid rgba(230,205,166,.65);border-radius:999px;padding:9px 15px;font-size:10px;letter-spacing:3.2px;background:rgba(40,25,22,.24)}
+    .hero h1{font-family:Tahoma,Arial,sans-serif;font-size:clamp(38px,5.3vw,64px);line-height:1.28;max-width:650px;letter-spacing:-1.3px;text-shadow:0 4px 24px rgba(0,0,0,.25)}
+    .hero p{font-size:15px;line-height:2;color:#f0e6dc;max-width:470px}
+    .hero .primary{background:linear-gradient(135deg,#e8d2ae,#c3a16c);color:#35221f;border-radius:999px;padding:15px 27px;box-shadow:0 10px 25px #140b0a35;font-weight:bold}
+    main{padding-top:60px}
+    .section-head{margin-bottom:30px}
+    .section-head h2{color:#35221f;font-size:31px;letter-spacing:-.5px}
+    .section-head p{color:#8c7b73}
+    .products{gap:23px}
+    .product{border:1px solid #e9dfd6;border-radius:18px;background:rgba(255,253,250,.97);box-shadow:0 12px 32px rgba(58,34,28,.055);transition:transform .28s,box-shadow .28s,border-color .28s}
+    .product:hover{transform:translateY(-7px);box-shadow:0 22px 42px rgba(58,34,28,.12);border-color:#cbb18a}
+    .product img{height:270px;background:#eee4da}
+    .product-info{padding:20px}
+    .tag{display:inline-block;background:#f4e9df;color:#986f50;border-radius:999px;padding:6px 10px;font-size:9px;font-weight:bold;letter-spacing:1.1px}
+    .product h3{color:#382622;font-size:17px;margin:13px 0 9px}
+    .desc{color:#84766e;line-height:2;min-height:48px}
+    .price{color:#35221f;font-size:20px}
+    .add{border:1px solid #6d4b3f;background:#fffdfa;color:#5a3a31;border-radius:999px;padding:10px 15px;transition:all .2s}
+    .add:hover{background:#35221f;color:#fff7ec;border-color:#35221f}
+    .notice{background:linear-gradient(110deg,#f2e7dc,#f6efe7);border:1px solid #e8d9c9;border-radius:14px;color:#72594d;padding:18px 20px}
+    footer{background:#2a1d1b;color:#e9d9c6;border-top:3px solid #c3a16c}
+    .modal{background:#fffdfa;border:1px solid #e8dbcf;border-radius:20px;box-shadow:0 28px 90px rgba(31,18,15,.28)}
+    .modal-head h2,.total{color:#35221f}
+    .close{width:38px;height:38px;border-radius:50%;background:#f5eee7;color:#35221f}
+    .cart-item{border-color:#eee4dc}
+    .cart-item img{border-radius:9px}
+    .qty button{border-radius:8px;color:#35221f}
+    .field input,.field textarea,.field select{background:#fffdfa;border:1px solid #e4d8cc;border-radius:9px}
+    .field input:focus,.field textarea:focus,.field select:focus{outline:2px solid #c3a16c55;border-color:#b99762}
+    .submit{background:linear-gradient(135deg,#247b58,#14583e);border-radius:999px;box-shadow:0 8px 20px rgba(20,88,62,.16)}
+    @media(max-width:900px){.hero{min-height:430px}.product img{height:235px}}
+    @media(max-width:520px){.hero{min-height:370px;background-position:58% center}.hero-inner{padding:58px 20px}.hero h1{font-size:39px}.products{gap:12px}.product{border-radius:13px}.product img{height:185px}.product-info{padding:13px}.section-head h2{font-size:25px}.add{padding:10px 12px}}
+
+
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .language-switch{display:flex;border:1px solid #d9c9b7;border-radius:999px;padding:3px;background:#fffaf4;gap:3px}
+    .lang-option{border:0;border-radius:999px;background:transparent;color:#705b4f;padding:8px 12px;font-size:12px;font-weight:bold}
+    .lang-option.active{background:#35221f;color:#fff8ed}
+    [data-en]{transition:opacity .15s}
+    html[dir="ltr"] body{text-align:left}
+    html[dir="ltr"] .hero-inner,html[dir="ltr"] main,html[dir="ltr"] footer{text-align:left}
+    html[dir="ltr"] .section-head{align-items:flex-start}
+    html[dir="ltr"] .price-row{direction:ltr}
+    html[dir="ltr"] .cart-item{direction:ltr}
+    html[dir="ltr"] .modal-head{direction:ltr}
+    html[dir="ltr"] .form-grid{text-align:left}
+    html[dir="ltr"] .payment{direction:ltr}
+    @media(max-width:520px){.nav-actions{gap:7px}.lang-option{padding:7px 9px}.cart-btn{padding:10px 12px}}
+
   </style>
 </head>
 <body>
-  <div class="topbar">أناقة تدوم • عطور مختارة بعناية • الطلب سهل وآمن</div>
-  <header><div class="nav"><div class="logo">NOIR<small>PERFUME HOUSE</small></div><button class="cart-btn" onclick="openCart()">السلة <span id="cartCount">0</span></button></div></header>
-  <section class="hero"><div class="hero-inner"><div class="eyebrow">THE ART OF SCENT</div><h1>عطر يعبّر عنك<br>قبل ما تتكلم</h1><p>اكتشف مجموعتنا التجريبية من العطور المختارة. الصور والأسعار الحالية للتجربة فقط، ويمكن استبدالها بمنتجاتك الحقيقية بسهولة.</p><a class="primary" href="#products">تسوّق العطور</a></div></section>
+  <div class="topbar"><span data-ar="أناقة تدوم • عطور مختارة بعناية • الطلب سهل وآمن" data-en="Timeless elegance • Curated fragrances • Easy ordering">أناقة تدوم • عطور مختارة بعناية • الطلب سهل وآمن</span></div>
+  <header><div class="nav"><div class="logo">NOIR<small>PERFUME HOUSE</small></div><div class="nav-actions"><div class="language-switch" aria-label="Choose language"><button type="button" id="langAr" class="lang-option active" onclick="setLanguage('ar')">عربي</button><button type="button" id="langEn" class="lang-option" onclick="setLanguage('en')">EN</button></div><button class="cart-btn" onclick="openCart()"><span data-ar="السلة" data-en="Cart">السلة</span> <b id="cartCount">0</b></button></div></div></header>
+  <section class="hero"><div class="hero-inner"><div class="eyebrow">THE ART OF SCENT</div><h1 data-ar="عطر يعبّر عنك<br>قبل ما تتكلم" data-en="A scent that speaks<br>before you do">عطر يعبّر عنك<br>قبل ما تتكلم</h1><p data-ar="اكتشف مجموعتنا التجريبية من العطور المختارة. الصور والأسعار الحالية للتجربة فقط، ويمكن استبدالها بمنتجاتك الحقيقية بسهولة." data-en="Discover our curated fragrance collection. Current product images and prices are placeholders and can be replaced with your real products.">اكتشف مجموعتنا التجريبية من العطور المختارة. الصور والأسعار الحالية للتجربة فقط، ويمكن استبدالها بمنتجاتك الحقيقية بسهولة.</p><a class="primary" href="#products" data-ar="تسوّق العطور" data-en="Explore fragrances">تسوّق العطور</a></div></section>
   <main id="products">
-    <div class="section-head"><div><h2>اختار عطرك</h2><p>مجموعة تجريبية — الأسعار بالجنيه المصري</p></div></div>
+    <div class="section-head"><div><h2 data-ar="اختار عطرك" data-en="Find your signature scent">اختار عطرك</h2><p data-ar="12 عطرًا تجريبيًا — الأسعار بالجنيه المصري" data-en="12 demo fragrances — prices in Egyptian pounds">12 عطرًا تجريبيًا — الأسعار بالجنيه المصري</p></div></div>
     <div class="products" id="productGrid"></div>
-    <div class="notice"><strong>ملاحظة:</strong> أسماء العطور والأسعار والصور الموجودة حاليًا تجريبية وليست عرضًا لمنتجات مؤكدة. عدّل بيانات المتجر قبل نشره للعملاء.</div>
+    <div class="notice"><strong data-ar="ملاحظة:" data-en="Note:">ملاحظة:</strong> <span data-ar="أسماء العطور والأسعار والصور الموجودة حاليًا تجريبية وليست عرضًا لمنتجات مؤكدة. عدّل بيانات المتجر قبل نشره للعملاء." data-en="Product names, prices and images are placeholders, not confirmed offers. Update the store details before sharing it with customers.">أسماء العطور والأسعار والصور الموجودة حاليًا تجريبية وليست عرضًا لمنتجات مؤكدة. عدّل بيانات المتجر قبل نشره للعملاء.</span></div>
   </main>
-  <footer>NOIR PERFUME HOUSE<br>تجربة متجر إلكتروني تجريبية — تواصل معنا عبر واتساب عند تفعيل رقم المتجر.</footer>
+  <footer>NOIR PERFUME HOUSE<br><span data-ar="متجر عطور تجريبي" data-en="Demo fragrance store">متجر عطور تجريبي</span></footer>
 
   <div class="modal-backdrop" id="cartModal" onclick="if(event.target===this)closeCart()"><div class="modal">
-    <div class="modal-head"><h2>سلة المشتريات</h2><button class="close" onclick="closeCart()" aria-label="إغلاق">×</button></div>
+    <div class="modal-head"><h2 data-ar="سلة المشتريات" data-en="Shopping cart">سلة المشتريات</h2><button class="close" onclick="closeCart()" aria-label="Close">×</button></div>
     <div id="cartContent"></div>
     <div id="checkoutArea" style="display:none">
-      <h3>بيانات التوصيل</h3>
+      <h3 data-ar="بيانات التوصيل" data-en="Delivery details">بيانات التوصيل</h3>
       <div class="form-grid">
-        <div class="field"><label for="customerName">الاسم بالكامل *</label><input id="customerName" autocomplete="name" required placeholder="اسمك"></div>
-        <div class="field"><label for="customerPhone">رقم الموبايل *</label><input id="customerPhone" type="tel" autocomplete="tel" required placeholder="01xxxxxxxxx"></div>
-        <div class="field full"><label for="customerAddress">العنوان بالتفصيل *</label><textarea id="customerAddress" autocomplete="street-address" required placeholder="المحافظة، المنطقة، الشارع، رقم العقار"></textarea></div>
-        <div class="field full"><label for="customerNotes">ملاحظات (اختياري)</label><textarea id="customerNotes" placeholder="أي تفاصيل إضافية عن الطلب"></textarea></div>
+        <div class="field"><label for="customerName"><span data-ar="الاسم بالكامل *" data-en="Full name *">الاسم بالكامل *</span></label><input id="customerName" autocomplete="name" required placeholder="اسمك"></div>
+        <div class="field"><label for="customerPhone"><span data-ar="رقم الموبايل *" data-en="Phone number *">رقم الموبايل *</span></label><input id="customerPhone" type="tel" autocomplete="tel" required placeholder="01xxxxxxxxx"></div>
+        <div class="field full"><label for="customerAddress"><span data-ar="العنوان بالتفصيل *" data-en="Full address *">العنوان بالتفصيل *</span></label><textarea id="customerAddress" autocomplete="street-address" required placeholder="المحافظة، المنطقة، الشارع، رقم العقار"></textarea></div>
+        <div class="field full"><label for="customerNotes"><span data-ar="ملاحظات (اختياري)" data-en="Notes (optional)">ملاحظات (اختياري)</span></label><textarea id="customerNotes" placeholder="أي تفاصيل إضافية عن الطلب"></textarea></div>
       </div>
-      <div class="field"><label>طريقة الدفع *</label><div class="payment"><label><input type="radio" name="payment" value="كاش عند الاستلام" checked onchange="updatePayment()"> كاش عند الاستلام</label><label><input type="radio" name="payment" value="InstaPay" onchange="updatePayment()"> InstaPay</label></div></div>
-      <div id="instaPayInfo" class="notice" style="display:none;margin:0 0 14px">بيانات InstaPay هتتضاف هنا بعد ما تبعتلي بيانات التحويل. راجع التحويل يدويًا قبل تأكيد الدفع.</div>
-      <button class="submit" onclick="sendOrder()">تأكيد الطلب عبر واتساب</button>
-      <div class="small-note">بالضغط على الزر هيفتح واتساب برسالة جاهزة. لازم تضغط إرسال داخل واتساب عشان الطلب يوصل للمتجر. الدفع عبر InstaPay لا يتم تلقائيًا من الموقع.</div>
+      <div class="field"><label><span data-ar="طريقة الدفع *" data-en="Payment method *">طريقة الدفع *</span></label><div class="payment"><label><input type="radio" name="payment" value="<span data-ar="كاش عند الاستلام" data-en="Cash on delivery">كاش عند الاستلام</span>" checked onchange="updatePayment()"> <span data-ar="كاش عند الاستلام" data-en="Cash on delivery">كاش عند الاستلام</span></label><label><input type="radio" name="payment" value="InstaPay" onchange="updatePayment()"> InstaPay</label></div></div>
+      <div id="instaPayInfo" class="notice" style="display:none;margin:0 0 14px"><span data-ar="بيانات InstaPay هتتضاف هنا بعد ما تبعتلي بيانات التحويل. راجع التحويل يدويًا قبل تأكيد الدفع." data-en="InstaPay details will be added once you provide them. Verify the transfer manually before confirming payment.">بيانات InstaPay هتتضاف هنا بعد ما تبعتلي بيانات التحويل. راجع التحويل يدويًا قبل تأكيد الدفع.</span></div>
+      <button class="submit" onclick="sendOrder()"><span data-ar="تأكيد الطلب عبر واتساب" data-en="Confirm order via WhatsApp">تأكيد الطلب عبر واتساب</span></button>
+      <div class="small-note"><span data-ar="بالضغط على الزر هيفتح واتساب برسالة جاهزة. لازم تضغط إرسال داخل واتساب عشان الطلب يوصل للمتجر. الدفع عبر InstaPay لا يتم تلقائيًا من الموقع." data-en="WhatsApp will open with a prepared message. The customer must tap Send for the order to reach the store. InstaPay is not processed automatically by this website.">بالضغط على الزر هيفتح واتساب برسالة جاهزة. لازم تضغط إرسال داخل واتساب عشان الطلب يوصل للمتجر. الدفع عبر InstaPay لا يتم تلقائيًا من الموقع.</span></div>
     </div>
   </div></div>
 
@@ -109,17 +171,38 @@
   // غيّر رقم واتساب إلى رقمك بكود الدولة، أرقام فقط: مثال مصر 2010XXXXXXXX
   const WHATSAPP_NUMBER = "201145731029";
   const products = [
-    {id:1,name:"عطر أمبر نايت",tag:"WARM • AMBER",price:850,size:"100 مل",desc:"نفحات دافئة من العنبر والأخشاب بلمسة أنيقة للمساء.",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80"},
-    {id:2,name:"عطر روز بلوم",tag:"FLORAL • SOFT",price:720,size:"100 مل",desc:"رائحة زهرية ناعمة ومنعشة تناسب الاستخدام اليومي.",image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"},
-    {id:3,name:"عطر أود رويال",tag:"OUD • WOODY",price:1100,size:"100 مل",desc:"مزيج غني من العود والتوابل بطابع شرقي مميز.",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"},
-    {id:4,name:"عطر فريش بلو",tag:"FRESH • AQUATIC",price:650,size:"100 مل",desc:"نفحات حمضية ومائية خفيفة لإحساس منعش طوال اليوم.",image:"https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=700&q=80"}
+    {id:1,name:"عطر أمبر نايت",nameEn:"Amber Night",tag:"WARM • AMBER",price:850,size:"100 مل",sizeEn:"100 ml",desc:"نفحات دافئة من العنبر والأخشاب بلمسة أنيقة للمساء.",descEn:"Warm amber and woody notes with an elegant evening finish.",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85"},
+    {id:2,name:"عطر روز بلوم",nameEn:"Rose Bloom",tag:"FLORAL • SOFT",price:720,size:"100 مل",sizeEn:"100 ml",desc:"رائحة زهرية ناعمة ومنعشة تناسب الاستخدام اليومي.",descEn:"A soft, fresh floral scent made for everyday wear.",image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85"},
+    {id:3,name:"عطر أود رويال",nameEn:"Oud Royale",tag:"OUD • WOODY",price:1100,size:"100 مل",sizeEn:"100 ml",desc:"مزيج غني من العود والتوابل بطابع شرقي مميز.",descEn:"A rich blend of oud and spices with a distinctive oriental character.",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=85"},
+    {id:4,name:"عطر فريش بلو",nameEn:"Fresh Blue",tag:"FRESH • AQUATIC",price:650,size:"100 مل",sizeEn:"100 ml",desc:"نفحات حمضية ومائية خفيفة لإحساس منعش طوال اليوم.",descEn:"Light citrus and aquatic notes for an all-day fresh feeling.",image:"https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=700&q=85"},
+    {id:5,name:"عطر فانيلا سموك",nameEn:"Vanilla Smoke",tag:"VANILLA • AMBER",price:930,size:"100 مل",sizeEn:"100 ml",desc:"فانيلا دافئة ولمسات حلوة مع قاعدة خشبية غنية.",descEn:"Warm vanilla and sweet notes over a rich woody base.",image:"https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=700&q=85"},
+    {id:6,name:"عطر وايت مسك",nameEn:"White Musk",tag:"MUSK • CLEAN",price:590,size:"100 مل",sizeEn:"100 ml",desc:"مسك ناعم ونظيف برائحة هادئة مناسبة لكل يوم.",descEn:"Soft, clean musk with a gentle scent for everyday wear.",image:"https://images.unsplash.com/photo-1595535373192-fc8935bacd89?auto=format&fit=crop&w=700&q=85"},
+    {id:7,name:"عطر ليذر وود",nameEn:"Leather Wood",tag:"LEATHER • WOODY",price:1250,size:"100 مل",sizeEn:"100 ml",desc:"جلد فاخر وأخشاب عميقة بطابع جريء ومميز.",descEn:"Luxurious leather and deep woods with a bold signature.",image:"https://images.unsplash.com/photo-1615634260167-c8cd34a2ecb4?auto=format&fit=crop&w=700&q=85"},
+    {id:8,name:"عطر جاسمين دريم",nameEn:"Jasmine Dream",tag:"WHITE FLORAL",price:780,size:"100 مل",sizeEn:"100 ml",desc:"الياسمين الأبيض مع لمسة ناعمة من الزهور الراقية.",descEn:"White jasmine with a soft touch of elegant florals.",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=85&sat=-25"},
+    {id:9,name:"عطر سيترس داي",nameEn:"Citrus Day",tag:"CITRUS • FRESH",price:620,size:"100 مل",sizeEn:"100 ml",desc:"حمضيات مشرقة ورائحة خفيفة مليانة حيوية.",descEn:"Bright citrus notes with a lively, refreshing character.",image:"https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=700&q=85&sat=-20"},
+    {id:10,name:"عطر دارك أمبر",nameEn:"Dark Amber",tag:"DARK • SPICY",price:980,size:"100 مل",sizeEn:"100 ml",desc:"عنبر داكن وتوابل دافئة لرائحة ملفتة في السهرات.",descEn:"Dark amber and warm spices for a striking evening scent.",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=85&sat=-20"},
+    {id:11,name:"عطر بلش روز",nameEn:"Blush Rose",tag:"ROSE • POWDERY",price:810,size:"100 مل",sizeEn:"100 ml",desc:"ورد ناعم بلمسة بودرية أنثوية وأنيقة.",descEn:"Soft rose with an elegant, powdery floral finish.",image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85&sat=-15"},
+    {id:12,name:"عطر سيج إند ساندل",nameEn:"Sage & Sandal",tag:"HERBAL • WOODY",price:890,size:"100 مل",sizeEn:"100 ml",desc:"أعشاب عطرية وخشب الصندل برائحة متوازنة وراقية.",descEn:"A balanced blend of aromatic herbs and creamy sandalwood.",image:"https://images.unsplash.com/photo-1615634260167-c8cd34a2ecb4?auto=format&fit=crop&w=700&q=85&sat=-15"}
   ];
   const cart = {};
   const money = n => new Intl.NumberFormat("ar-EG").format(n) + " ج.م";
   function renderProducts(){
+    const en = document.documentElement.lang === "en";
     document.getElementById("productGrid").innerHTML=products.map(p=>`
-      <article class="product"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://placehold.co/600x700/e8dfd3/5b4632?text=Perfume'">
-      <div class="product-info"><div class="tag">${p.tag}</div><h3>${p.name}</h3><div class="desc">${p.desc}<br>الحجم: ${p.size}</div><div class="price-row"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">+ أضف للسلة</button></div></div></article>`).join("");
+      <article class="product"><img src="${p.image}" alt="${en ? p.nameEn : p.name}" loading="lazy" onerror="this.src='https://placehold.co/600x700/e8dfd3/5b4632?text=Perfume'">
+      <div class="product-info"><div class="tag">${p.tag}</div><h3>${en ? p.nameEn : p.name}</h3><div class="desc">${en ? p.descEn : p.desc}<br>${en ? "Size: "+p.sizeEn : "الحجم: "+p.size}</div><div class="price-row"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">${en ? "+ Add to cart" : "+ أضف للسلة"}</button></div></div></article>`).join("");
+  }
+  function setLanguage(lang){
+    const root=document.getElementById("pageRoot");
+    root.lang=lang;root.dir=lang==="ar"?"rtl":"ltr";
+    document.querySelectorAll("[data-ar][data-en]").forEach(el=>{el.innerHTML=lang==="ar"?el.dataset.ar:el.dataset.en;});
+    document.getElementById("langAr").classList.toggle("active",lang==="ar");
+    document.getElementById("langEn").classList.toggle("active",lang==="en");
+    document.getElementById("customerName").placeholder=lang==="ar"?"اسمك":"Your name";
+    document.getElementById("customerPhone").placeholder=lang==="ar"?"01xxxxxxxxx":"01xxxxxxxxx";
+    document.getElementById("customerAddress").placeholder=lang==="ar"?"المحافظة، المنطقة، الشارع، رقم العقار":"City, area, street, building number";
+    document.getElementById("customerNotes").placeholder=lang==="ar"?"أي تفاصيل إضافية عن الطلب":"Any extra order notes";
+    renderProducts();renderCart();
   }
   function addToCart(id){cart[id]=(cart[id]||0)+1;updateCount();renderCart();openCart()}
   function updateCount(){document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
@@ -127,8 +210,9 @@
   function renderCart(){
     const items=products.filter(p=>cart[p.id]);
     const content=document.getElementById("cartContent");
-    if(!items.length){content.innerHTML='<div class="empty">السلة لسه فاضية. اختار العطر اللي يعجبك.</div>';document.getElementById("checkoutArea").style.display="none";return}
-    content.innerHTML='<div class="cart-list">'+items.map(p=>`<div class="cart-item"><img src="${p.image}" alt=""><div class="item-name"><strong>${p.name}</strong><small>${money(p.price)} للقطعة</small><button class="remove" onclick="removeItem(${p.id})">حذف</button></div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${cart[p.id]}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>`).join("")+'</div><div class="total"><span>الإجمالي (الشحن غير شامل)</span><span>'+money(total())+'</span></div>';
+    const en=document.documentElement.lang==="en";
+    if(!items.length){content.innerHTML='<div class="empty">'+(en?"Your cart is empty. Pick a fragrance to get started.":"السلة لسه فاضية. اختار العطر اللي يعجبك.")+'</div>';document.getElementById("checkoutArea").style.display="none";return}
+    content.innerHTML='<div class="cart-list">'+items.map(p=>`<div class="cart-item"><img src="${p.image}" alt=""><div class="item-name"><strong>${en?p.nameEn:p.name}</strong><small>${money(p.price)} ${en?"each":"للقطعة"}</small><button class="remove" onclick="removeItem(${p.id})">${en?"Remove":"حذف"}</button></div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${cart[p.id]}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>`).join("")+'</div><div class="total"><span>'+(en?"Subtotal (shipping not included)":"الإجمالي (الشحن غير شامل)")+'</span><span>'+money(total())+'</span></div>';
     document.getElementById("checkoutArea").style.display="block";
   }
   function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCount();renderCart()}
@@ -146,12 +230,12 @@
     const payment=document.querySelector('input[name="payment"]:checked').value;
     if(!name||!phone||!address){alert("من فضلك اكتب الاسم ورقم الموبايل والعنوان.");return}
     if(WHATSAPP_NUMBER==="201000000000"){alert("رقم واتساب مضبوط بالفعل في نسخة المتجر هذه.");return}
-    let msg="🛍️ *طلب جديد من متجر NOIR*%0A";
-    msg+="%0A*بيانات العميل*%0Aالاسم: "+name+"%0Aالموبايل: "+phone+"%0Aالعنوان: "+address+"%0A%0A*تفاصيل الطلب*%0A";
-    items.forEach(p=>{msg+=p.name+" × "+cart[p.id]+" — "+money(p.price*cart[p.id])+"%0A"});
-    msg+="%0A*إجمالي المنتجات: "+money(total())+"*%0Aالشحن: غير محسوب%0Aطريقة الدفع: "+payment;
-    if(payment==="InstaPay")msg+="%0Aحالة التحويل: يحتاج مراجعة وتأكيد";
-    if(notes)msg+="%0Aملاحظات: "+notes;
+    const en=document.documentElement.lang==="en";
+    let msg=en?"🛍️ *New order from NOIR*\n\n*Customer details*\nName: "+name+"\nPhone: "+phone+"\nAddress: "+address+"\n\n*Order details*\n":"🛍️ *طلب جديد من متجر NOIR*\n\n*بيانات العميل*\nالاسم: "+name+"\nالموبايل: "+phone+"\nالعنوان: "+address+"\n\n*تفاصيل الطلب*\n";
+    items.forEach(p=>{msg+=(en?p.nameEn:p.name)+" × "+cart[p.id]+" — "+money(p.price*cart[p.id])+"\n"});
+    msg+="\n*"+(en?"Products total: ":"إجمالي المنتجات: ")+money(total())+"*\n"+(en?"Shipping: not included":"الشحن: غير محسوب")+"\n"+(en?"Payment method: ":"طريقة الدفع: ")+payment;
+    if(payment==="InstaPay")msg+="\n"+(en?"Transfer status: pending manual verification":"حالة التحويل: يحتاج مراجعة وتأكيد");
+    if(notes)msg+="\n"+(en?"Notes: ":"ملاحظات: ")+notes;
     window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(decodeURIComponent(msg.replace(/%0A/g,"\n"))),"_blank","noopener");
   }
   renderProducts();updateCount();
