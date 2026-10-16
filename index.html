@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#15110f">
+  <title>NOIR — متجر العطور</title>
+  <style>
+    :root{--bg:#f7f4ef;--ink:#201a16;--muted:#786e65;--gold:#b88a45;--dark:#171310;--card:#fffdf9;--line:#e8dfd3}
+    *{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    button,input,textarea,select{font:inherit}button{cursor:pointer}
+    .topbar{background:#171310;color:#f9f2e6;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:.3px}
+    header{background:rgba(247,244,239,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+    .nav{max-width:1180px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-family:Georgia,serif;font-size:26px;letter-spacing:4px;font-weight:bold}.logo small{display:block;font-family:Tahoma,Arial;font-size:9px;letter-spacing:3px;color:var(--gold);text-align:center;margin-top:3px}
+    .cart-btn,.primary,.secondary{border:0;padding:12px 18px;border-radius:4px;font-weight:bold}
+    .cart-btn,.primary{background:var(--dark);color:#fff}.cart-btn span{background:var(--gold);padding:2px 7px;border-radius:20px;margin-right:7px}
+    .hero{background:linear-gradient(105deg,rgba(20,15,12,.94),rgba(20,15,12,.68)),url('https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1800&q=85') center/cover;color:#fff;min-height:360px;display:flex;align-items:center}
+    .hero-inner{max-width:1180px;margin:auto;width:100%;padding:58px 24px}.eyebrow{color:#d9b77e;letter-spacing:3px;font-size:12px}.hero h1{font-size:clamp(35px,5vw,58px);margin:17px 0 12px;max-width:600px;line-height:1.25}.hero p{color:#e0d6ca;max-width:520px;line-height:1.9}
+    .hero .primary{display:inline-block;text-decoration:none;background:var(--gold);color:#171310;margin-top:12px}
+    main{max-width:1180px;margin:0 auto;padding:44px 22px 65px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:24px}.section-head h2{font-size:28px;margin:0 0 7px}.section-head p{margin:0;color:var(--muted);font-size:14px}
+    .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}.product{background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .2s}.product:hover{transform:translateY(-4px)}.product img{display:block;width:100%;height:255px;object-fit:cover;background:#e6ddd1}.product-info{padding:17px}.tag{color:var(--gold);font-size:10px;letter-spacing:1px}.product h3{margin:8px 0;font-size:17px}.desc{font-size:12px;line-height:1.8;color:var(--muted);min-height:44px}.price-row{display:flex;align-items:center;justify-content:space-between;margin-top:16px;gap:8px}.price{font-weight:bold;font-size:18px}.add{background:transparent;border:1px solid var(--gold);padding:9px 12px;color:var(--ink);border-radius:3px}.add:hover{background:var(--gold);color:white}
+    .notice{margin-top:28px;background:#eee5d8;padding:16px 18px;font-size:13px;line-height:1.8;color:#57483a}
+    footer{background:var(--dark);color:#d7c9b6;text-align:center;padding:27px 15px;font-size:12px;line-height:2}.modal-backdrop{display:none;position:fixed;inset:0;background:#0009;z-index:20;align-items:center;justify-content:center;padding:14px}.modal-backdrop.show{display:flex}.modal{width:min(650px,100%);max-height:92vh;overflow:auto;background:var(--card);padding:24px;border-radius:7px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.modal-head h2{margin:0}.close{border:0;background:transparent;font-size:27px}.cart-list{margin:18px 0}.cart-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding:12px 0}.cart-item img{width:58px;height:65px;object-fit:cover}.cart-item .item-name{flex:1}.cart-item small{display:block;color:var(--muted);margin-top:5px}.qty{display:flex;align-items:center;gap:9px}.qty button{width:27px;height:27px;border:1px solid var(--line);background:white}.remove{border:0;background:none;color:#a33}.total{display:flex;justify-content:space-between;font-weight:bold;font-size:20px;padding:15px 0;border-top:1px solid var(--line)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}.field.full{grid-column:1/-1}.field label{font-size:13px}.field input,.field textarea,.field select{width:100%;border:1px solid #d8cec1;background:white;padding:12px;border-radius:3px}.field textarea{min-height:75px;resize:vertical}.payment{display:flex;gap:16px;flex-wrap:wrap;padding:9px 0 15px}.payment label{display:flex;align-items:center;gap:6px;font-size:14px}.submit{width:100%;padding:15px;background:#16865b;color:white;border:0;border-radius:4px;font-weight:bold}.small-note{font-size:11px;line-height:1.8;color:var(--muted);margin-top:10px}.empty{text-align:center;color:var(--muted);padding:25px}
+    @media(max-width:900px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product img{height:230px}}
+    @media(max-width:520px){.nav{padding:13px 15px}.logo{font-size:22px}.hero{min-height:330px}.hero-inner{padding:43px 20px}main{padding:32px 14px 45px}.products{gap:10px}.product img{height:175px}.product-info{padding:12px}.product h3{font-size:14px}.desc{font-size:11px;min-height:55px}.price-row{align-items:flex-start;flex-direction:column}.add{width:100%}.section-head h2{font-size:23px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.modal{padding:18px}.cart-item{gap:8px}.qty{gap:5px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">أناقة تدوم • عطور مختارة بعناية • الطلب سهل وآمن</div>
+  <header><div class="nav"><div class="logo">NOIR<small>PERFUME HOUSE</small></div><button class="cart-btn" onclick="openCart()">السلة <span id="cartCount">0</span></button></div></header>
+  <section class="hero"><div class="hero-inner"><div class="eyebrow">THE ART OF SCENT</div><h1>عطر يعبّر عنك<br>قبل ما تتكلم</h1><p>اكتشف مجموعتنا التجريبية من العطور المختارة. الصور والأسعار الحالية للتجربة فقط، ويمكن استبدالها بمنتجاتك الحقيقية بسهولة.</p><a class="primary" href="#products">تسوّق العطور</a></div></section>
+  <main id="products">
+    <div class="section-head"><div><h2>اختار عطرك</h2><p>مجموعة تجريبية — الأسعار بالجنيه المصري</p></div></div>
+    <div class="products" id="productGrid"></div>
+    <div class="notice"><strong>ملاحظة:</strong> أسماء العطور والأسعار والصور الموجودة حاليًا تجريبية وليست عرضًا لمنتجات مؤكدة. عدّل بيانات المتجر قبل نشره للعملاء.</div>
+  </main>
+  <footer>NOIR PERFUME HOUSE<br>تجربة متجر إلكتروني تجريبية — تواصل معنا عبر واتساب عند تفعيل رقم المتجر.</footer>
+
+  <div class="modal-backdrop" id="cartModal" onclick="if(event.target===this)closeCart()"><div class="modal">
+    <div class="modal-head"><h2>سلة المشتريات</h2><button class="close" onclick="closeCart()" aria-label="إغلاق">×</button></div>
+    <div id="cartContent"></div>
+    <div id="checkoutArea" style="display:none">
+      <h3>بيانات التوصيل</h3>
+      <div class="form-grid">
+        <div class="field"><label for="customerName">الاسم بالكامل *</label><input id="customerName" autocomplete="name" required placeholder="اسمك"></div>
+        <div class="field"><label for="customerPhone">رقم الموبايل *</label><input id="customerPhone" type="tel" autocomplete="tel" required placeholder="01xxxxxxxxx"></div>
+        <div class="field full"><label for="customerAddress">العنوان بالتفصيل *</label><textarea id="customerAddress" autocomplete="street-address" required placeholder="المحافظة، المنطقة، الشارع، رقم العقار"></textarea></div>
+        <div class="field full"><label for="customerNotes">ملاحظات (اختياري)</label><textarea id="customerNotes" placeholder="أي تفاصيل إضافية عن الطلب"></textarea></div>
+      </div>
+      <div class="field"><label>طريقة الدفع *</label><div class="payment"><label><input type="radio" name="payment" value="كاش عند الاستلام" checked onchange="updatePayment()"> كاش عند الاستلام</label><label><input type="radio" name="payment" value="InstaPay" onchange="updatePayment()"> InstaPay</label></div></div>
+      <div id="instaPayInfo" class="notice" style="display:none;margin:0 0 14px">بيانات InstaPay هتتضاف هنا بعد ما تبعتلي بيانات التحويل. راجع التحويل يدويًا قبل تأكيد الدفع.</div>
+      <button class="submit" onclick="sendOrder()">تأكيد الطلب عبر واتساب</button>
+      <div class="small-note">بالضغط على الزر هيفتح واتساب برسالة جاهزة. لازم تضغط إرسال داخل واتساب عشان الطلب يوصل للمتجر. الدفع عبر InstaPay لا يتم تلقائيًا من الموقع.</div>
+    </div>
+  </div></div>
+
+<script>
+  // غيّر رقم واتساب إلى رقمك بكود الدولة، أرقام فقط: مثال مصر 2010XXXXXXXX
+  const WHATSAPP_NUMBER = "201145731029";
+  const products = [
+    {id:1,name:"عطر أمبر نايت",tag:"WARM • AMBER",price:850,size:"100 مل",desc:"نفحات دافئة من العنبر والأخشاب بلمسة أنيقة للمساء.",image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=700&q=80"},
+    {id:2,name:"عطر روز بلوم",tag:"FLORAL • SOFT",price:720,size:"100 مل",desc:"رائحة زهرية ناعمة ومنعشة تناسب الاستخدام اليومي.",image:"https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=80"},
+    {id:3,name:"عطر أود رويال",tag:"OUD • WOODY",price:1100,size:"100 مل",desc:"مزيج غني من العود والتوابل بطابع شرقي مميز.",image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=700&q=80"},
+    {id:4,name:"عطر فريش بلو",tag:"FRESH • AQUATIC",price:650,size:"100 مل",desc:"نفحات حمضية ومائية خفيفة لإحساس منعش طوال اليوم.",image:"https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=700&q=80"}
+  ];
+  const cart = {};
+  const money = n => new Intl.NumberFormat("ar-EG").format(n) + " ج.م";
+  function renderProducts(){
+    document.getElementById("productGrid").innerHTML=products.map(p=>`
+      <article class="product"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://placehold.co/600x700/e8dfd3/5b4632?text=Perfume'">
+      <div class="product-info"><div class="tag">${p.tag}</div><h3>${p.name}</h3><div class="desc">${p.desc}<br>الحجم: ${p.size}</div><div class="price-row"><div class="price">${money(p.price)}</div><button class="add" onclick="addToCart(${p.id})">+ أضف للسلة</button></div></div></article>`).join("");
+  }
+  function addToCart(id){cart[id]=(cart[id]||0)+1;updateCount();renderCart();openCart()}
+  function updateCount(){document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0)}
+  function total(){return products.reduce((s,p)=>s+p.price*(cart[p.id]||0),0)}
+  function renderCart(){
+    const items=products.filter(p=>cart[p.id]);
+    const content=document.getElementById("cartContent");
+    if(!items.length){content.innerHTML='<div class="empty">السلة لسه فاضية. اختار العطر اللي يعجبك.</div>';document.getElementById("checkoutArea").style.display="none";return}
+    content.innerHTML='<div class="cart-list">'+items.map(p=>`<div class="cart-item"><img src="${p.image}" alt=""><div class="item-name"><strong>${p.name}</strong><small>${money(p.price)} للقطعة</small><button class="remove" onclick="removeItem(${p.id})">حذف</button></div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${cart[p.id]}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>`).join("")+'</div><div class="total"><span>الإجمالي (الشحن غير شامل)</span><span>'+money(total())+'</span></div>';
+    document.getElementById("checkoutArea").style.display="block";
+  }
+  function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCount();renderCart()}
+  function removeItem(id){delete cart[id];updateCount();renderCart()}
+  function openCart(){renderCart();document.getElementById("cartModal").classList.add("show");document.body.style.overflow="hidden"}
+  function closeCart(){document.getElementById("cartModal").classList.remove("show");document.body.style.overflow=""}
+  function updatePayment(){document.getElementById("instaPayInfo").style.display=document.querySelector('input[name="payment"]:checked').value==="InstaPay"?"block":"none"}
+  function sendOrder(){
+    const items=products.filter(p=>cart[p.id]);
+    if(!items.length){alert("السلة فاضية.");return}
+    const name=document.getElementById("customerName").value.trim();
+    const phone=document.getElementById("customerPhone").value.trim();
+    const address=document.getElementById("customerAddress").value.trim();
+    const notes=document.getElementById("customerNotes").value.trim();
+    const payment=document.querySelector('input[name="payment"]:checked').value;
+    if(!name||!phone||!address){alert("من فضلك اكتب الاسم ورقم الموبايل والعنوان.");return}
+    if(WHATSAPP_NUMBER==="201000000000"){alert("رقم واتساب مضبوط بالفعل في نسخة المتجر هذه.");return}
+    let msg="🛍️ *طلب جديد من متجر NOIR*%0A";
+    msg+="%0A*بيانات العميل*%0Aالاسم: "+name+"%0Aالموبايل: "+phone+"%0Aالعنوان: "+address+"%0A%0A*تفاصيل الطلب*%0A";
+    items.forEach(p=>{msg+=p.name+" × "+cart[p.id]+" — "+money(p.price*cart[p.id])+"%0A"});
+    msg+="%0A*إجمالي المنتجات: "+money(total())+"*%0Aالشحن: غير محسوب%0Aطريقة الدفع: "+payment;
+    if(payment==="InstaPay")msg+="%0Aحالة التحويل: يحتاج مراجعة وتأكيد";
+    if(notes)msg+="%0Aملاحظات: "+notes;
+    window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(decodeURIComponent(msg.replace(/%0A/g,"\n"))),"_blank","noopener");
+  }
+  renderProducts();updateCount();
+</script>
+</body>
+</html>
